@@ -71,6 +71,7 @@ section {
   letter-spacing: 1px;
 }
 .section-p{
+  margin-top: 30px;
   font-size: 23px;
 }
 img{
@@ -78,6 +79,12 @@ img{
   height: fit-content;
   padding-bottom: 30px;
   padding-top: 20px;
+}
+.photo-1 {
+  width: 500px;
+  height: 350px;
+  display: block;       /* make it block */
+  margin: 0 auto;       /* center horizontally */
 }
 /*About Section-End*/
 /* About Topic-Start*/
@@ -147,7 +154,7 @@ img{
 }
 
 .toc-cute .icon {
-  background: black;
+  background: #ffd6a5;
   color: white;
   font-weight: bold;
   width: 30px;

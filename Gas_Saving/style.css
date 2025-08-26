@@ -71,6 +71,7 @@ section {
   letter-spacing: 1px;
 }
 .section-p{
+  margin-top: 30px;
   font-size: 23px;
 }
 img{
@@ -79,6 +80,14 @@ img{
   padding-bottom: 30px;
   padding-top: 20px;
 }
+.my-photo {
+  width: 500px;
+  height: 350px;
+  display: block;       /* make it block */
+  margin: 0 auto;       /* center horizontally */
+}
+
+
 /*About Section-End*/
 /* About Topic-Start*/
 .toc-cute {
@@ -249,6 +258,10 @@ img{
     position: relative;
     user-select: none;
     transition: background-color 0.2s ease;
+  }
+  .btn-answer.disabled { 
+    opacity: 0.6; 
+    cursor: not-allowed; 
   }
   .btn-answer:hover {
     background-color: #f0f8ff;
