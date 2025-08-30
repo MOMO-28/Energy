@@ -15,11 +15,11 @@
     color: #ffffff;
     font-size: 60px;
     font-weight: bold;
+    text-align: center;
     text-shadow: 0 0 10px rgba(0,0,0,0.7);
     white-space: nowrap;
     overflow: hidden;
     width: 100%;
-    /* Remove blinking cursor styles */
     border-right: none;
     animation: none;
   }
@@ -53,6 +53,7 @@
   nav ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
   }
@@ -141,3 +142,101 @@
     margin-top: 20px;
     color: white;
   }
+  /* Adjust For all Screens */
+  @media (max-width: 1200px) {
+  .over { height: 520px; }
+  .aboutus-class { margin: 40px 50px; }
+  .aboutus-class-p { margin-left: 30px; }
+  .footer-nav ul li + li::before { margin: 0 24px; }
+}
+
+/* ---------- ≤992px (tablet) ---------- */
+@media (max-width: 992px) {
+  nav {
+    padding: 0 14px;
+    height: auto;
+    min-height: 64px;
+  }
+  nav ul { justify-content: flex-end; gap: 8px; }
+  nav ul li { margin: 6px 8px; }
+  nav a, nav ul li a { font-size: 15px; }
+
+  .over {
+    height: 480px;
+    background-position: center;
+  }
+  .typing {
+    font-size: clamp(28px, 5.5vw, 48px);
+    padding: 0 12px;
+    white-space: normal;
+  }
+
+  /* About us spacing */
+  .aboutus-class { margin: 32px 28px; }
+  .aboutus-class-p { margin-left: 0; }
+
+  /* Footer spacing */
+  .footer-contanier { justify-content: center; gap: 12px; }
+  .footer-nav { justify-content: center; }
+  .footer-nav ul { gap: 10px; }
+  .footer-nav ul li + li::before { margin: 0 16px; }
+  #footer_p { text-align: center; }
+}
+
+/* ---------- ≤768px (mobile) ---------- */
+@media (max-width: 768px) {
+  /* Hero more compact */
+  .over { height: 56vh; }
+  .typing { font-size: clamp(24px, 7.5vw, 38px); }
+
+  /* Nav touch targets a bit bigger */
+  nav a, nav ul li a {
+    padding: 6px 4px;
+    margin-right: 10px;
+  }
+
+  /* About us tighter margins */
+  .aboutus-class { margin: 24px 16px; }
+
+  /* Footer stack vertically */
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-contanier {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer-nav { flex-direction: column; }
+  .footer-nav ul {
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .footer-nav ul li + li::before { margin: 0 10px; }
+}
+
+/* ---------- ≤576px (small phones) ---------- */
+@media (max-width: 576px) {
+  nav { padding: 8px 10px; }
+  nav ul li { margin: 4px 6px; }
+  .over { height: 48vh; }
+
+  .typing {
+    font-size: clamp(20px, 9.5vw, 32px);
+    line-height: 1.2;
+  }
+
+  .aboutus-class { margin: 18px 12px; }
+
+  .footer-nav ul li a,
+  #footer_p { font-size: 0.95rem; }
+}
+
+/* ---------- Touch devices: hover underline မဖော် ---------- */
+@media (hover: none) and (pointer: coarse) {
+  nav ul li a { padding: 8px 4px; }
+  nav ul li a:hover::after { width: 0; }
+}

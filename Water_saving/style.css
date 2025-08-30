@@ -87,6 +87,42 @@ img{
   margin: 0 auto;       /* center horizontally */
 }
 /*About Section-End*/
+/*About Box-Start*/
+.column-box {
+  border: 1px dotted #999;
+  padding: 1.2rem 1.5rem;
+  margin: 2rem 0;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+}
+
+.column-label {
+  position: absolute;
+  top: -12px;
+  left: 0;
+  background-color: #000;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 0 4px 4px 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.column-content p:first-child {
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 27px;
+}
+
+.column-content p {
+  margin-bottom: 1rem;
+  white-space: pre-line; /* if you want to respect line breaks */
+}
+/*ABout Box-End*/
 /* About Topic-Start*/
 .toc-cute {
   width: 900px;
@@ -220,9 +256,143 @@ img{
 .content-wrapper aside ul li {
   margin-bottom: 0.6rem;
   list-style-type: "✔️";
-  color: #007acc;
+  color:black;
   font-weight: 600;
 }
+/* Card about*/
+.flip-card {
+  background-color: transparent;
+  width: 100%;        
+  max-width: 300px;    
+  height: auto;        
+  margin: 0 auto 1.5rem;
+  perspective: 1000px;
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 260px;    
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  .flip-card-front {
+    background-color: #fff;
+    color: black;
+  }
+
+  .flip-card-front img {
+    width: 100%;
+    height: 80%;
+    border-radius: 0 0 0 0;
+    object-fit: cover;
+  }
+
+  .flip-card-front h2 {
+    font-size: 1.1rem;
+    margin: 8px 0 4px;
+  }
+
+  .flip-card-front p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+  }
+
+  .flip-card-back {
+    background-color: white;
+    color: white;
+    transform: rotateY(180deg);
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: 0.9rem;
+  }
+
+  .flip-card-back h3 {
+    margin-top: 0;
+  }
+
+  .flip-card-back ul {
+    text-align: left;
+    padding-left: 20px;
+    color: #000;
+  }
+
+  .flip-card-back ul li {
+    margin-bottom: 8px;
+    color: #000;
+  }
+  .store-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px 0;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: transform 0.2s, background 0.3s;
+  font-size: 0.9rem;
+  padding: 8px;
+}
+
+.store-link img {
+  height: 20px;
+  width: auto;
+}
+
+.store-link:hover {
+  background: #f1f1f1;
+  transform: scale(1.05);
+}
+.amazon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background-color: #ff9900;  /* Amazon orange */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color .3s, transform .2s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.amazon-btn i {
+  font-size: 1.2rem;
+}
+
+.amazon-btn:hover {
+  background-color: #e68a00; /* darker orange */
+  transform: translateY(-2px);
+}
+
+.amazon-btn:active {
+  transform: scale(0.97);
+}
+
 /*About Rection-Start*/
 .question {
     margin-bottom: 2.5rem;

@@ -1,8 +1,7 @@
 const texts = [
   "Our_Policy",
   "私たちの方針",
-  "Group（１）",
-  "Enjoy the smooth animation!"
+  "Group(1)",
 ];
 
 const typingElement = document.getElementById('typing');

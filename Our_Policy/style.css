@@ -19,8 +19,8 @@
     white-space: nowrap;
     overflow: hidden;
     width: 100%;
-    /* Remove blinking cursor styles */
     border-right: none;
+    text-align: center;
     animation: none;
   }
   nav {
@@ -53,6 +53,7 @@
   nav ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
   }
@@ -141,3 +142,99 @@
     margin-top: 20px;
     color: white;
   }
+  /* ---------- ≤1200px ---------- */
+@media (max-width: 1200px) {
+  .over { height: 520px; } /* hero height slightly smaller */
+  .ourpolicy-class { margin: 40px 50px; }
+  .ourpolicy-p { margin-left: 30px; }
+  .footer-nav ul li + li::before { margin: 0 24px; }
+}
+
+/* ---------- ≤992px (tablet) ---------- */
+@media (max-width: 992px) {
+  /* Nav: height auto & better spacing */
+  nav {
+    padding: 0 14px;
+    height: auto;
+    min-height: 64px;
+  }
+  nav ul { justify-content: flex-end; gap: 8px; }
+  nav ul li { margin: 6px 8px; }
+  nav a, nav ul li a { font-size: 15px; }
+
+  /* Hero */
+  .over {
+    height: 480px;
+    background-position: center;
+  }
+  .typing {
+    font-size: clamp(28px, 5.5vw, 48px);
+    padding: 0 12px;
+    white-space: normal; /* phone/tablet မှာ စာကြောင်းပွားနိုင် */
+  }
+
+  /* Policy content spacing */
+  .ourpolicy-class { margin: 32px 28px; }
+  .ourpolicy-p { margin-left: 0; }
+
+  /* Footer spacing */
+  .footer-contanier { justify-content: center; gap: 12px; }
+  .footer-nav { justify-content: center; }
+  .footer-nav ul { gap: 10px; }
+  .footer-nav ul li + li::before { margin: 0 16px; }
+  #footer_p { text-align: center; }
+}
+/* Adjust For All screens */
+/* ---------- ≤768px (mobile) ---------- */
+@media (max-width: 768px) {
+  .over { height: 56vh; }
+  .typing { font-size: clamp(24px, 7.5vw, 38px); }
+
+  nav a, nav ul li a {
+    padding: 6px 4px;
+    margin-right: 10px;
+  }
+
+  .ourpolicy-class { margin: 24px 16px; }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-contanier {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer-nav { flex-direction: column; }
+  .footer-nav ul {
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .footer-nav ul li + li::before { margin: 0 10px; }
+}
+
+/* ---------- ≤576px (small phones) ---------- */
+@media (max-width: 576px) {
+  nav { padding: 8px 10px; }
+  nav ul li { margin: 4px 6px; }
+  .over { height: 48vh; }
+
+  .typing {
+    font-size: clamp(20px, 9.5vw, 32px);
+    line-height: 1.2;
+  }
+
+  .ourpolicy-class { margin: 18px 12px; }
+
+  .footer-nav ul li a,
+  #footer_p { font-size: 0.95rem; }
+}
+
+/* ---------- Touch devices: hover underline မဖော် ---------- */
+@media (hover: none) and (pointer: coarse) {
+  nav ul li a { padding: 8px 4px; }
+  nav ul li a:hover::after { width: 0; }
+}

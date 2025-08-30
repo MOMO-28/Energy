@@ -37,6 +37,7 @@ nav ul {
   padding: 0;
   display: flex;
   gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 nav ul li a {
@@ -73,13 +74,39 @@ section {
 }
 .section-p{
   font-size: 23px;
+  margin-top: 30px;
 }
 img{
   width:900px;
-  height: fit-content;
+  height: auto;
   padding-bottom: 30px;
   padding-top: 20px;
 }
+
+.my-photo {
+  width: 500px;
+  height: 350px;
+  display: block;       /* make it block */
+  margin: 0 auto;       /* center horizontally */
+}
+    .container-1-1 {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    figure {
+      text-align: center;
+    }
+    figcaption {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #333;
+    }
+    .my-photo-1{
+      max-width: 300px;
+      height: auto;
+    }
 /*About Section-End*/
 
 /*About Box-Start*/
@@ -254,6 +281,139 @@ img{
   color: #007acc;
   font-weight: 600;
 }
+/* Card about*/
+.flip-card {
+  background-color: transparent;
+  width: 100%;        
+  max-width: 300px;    
+  height: auto;        
+  margin: 0 auto 1.5rem;
+  perspective: 1000px;
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 260px;    
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  .flip-card-front {
+    background-color: #fff;
+    color: black;
+  }
+
+  .flip-card-front img {
+    width: 100%;
+    height: 80%;
+    border-radius: 0 0 0 0;
+    object-fit: cover;
+  }
+
+  .flip-card-front h2 {
+    font-size: 1.1rem;
+    margin: 8px 0 4px;
+  }
+
+  .flip-card-front p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+  }
+
+  .flip-card-back {
+    background-color: white;
+    color: white;
+    transform: rotateY(180deg);
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: 0.9rem;
+  }
+
+  .flip-card-back h3 {
+    margin-top: 0;
+  }
+
+  .flip-card-back ul {
+    text-align: left;
+    padding-left: 20px;
+    color: #000;
+  }
+
+  .flip-card-back ul li {
+    margin-bottom: 8px;
+    color: #000;
+  }
+  .store-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px 0;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: transform 0.2s, background 0.3s;
+  font-size: 0.9rem;
+  padding: 8px;
+}
+
+.store-link img {
+  height: 20px;
+  width: auto;
+}
+
+.store-link:hover {
+  background: #f1f1f1;
+  transform: scale(1.05);
+}
+.amazon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background-color: #ff9900;  /* Amazon orange */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color .3s, transform .2s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.amazon-btn i {
+  font-size: 1.2rem;
+}
+
+.amazon-btn:hover {
+  background-color: #e68a00; /* darker orange */
+  transform: translateY(-2px);
+}
+
+.amazon-btn:active {
+  transform: scale(0.97);
+}
 /*About Rection-Start*/
 .question {
     margin-bottom: 2.5rem;
@@ -400,4 +560,135 @@ footer {
   margin-top: 20px;
   color: white;
   text-align: center;
+}
+
+/* Adjust for all Screens*/
+/* -------- ≤1200px (large tablets / small laptops) -------- */
+@media (max-width: 1200px) {
+  /* Hero height a bit shorter to avoid huge fold on smaller laptops */
+  header { border-radius: 0 0 12px 12px; }
+  .content-wrapper { padding: 0 1rem; }
+
+  /* Wide fixed blocks become fluid */
+  .toc-cute { max-width: 100%; width: auto; }
+  img { max-width: 100%; width: 100%; } /* 900px → fluid only under 1200px */
+  .my-photo { max-width: 100%; width: 100%; height: auto; }
+
+  /* Footer separator spacing a little tighter */
+  .footer-nav ul li + li::before { margin: 0 24px; }
+}
+
+/* -------- ≤992px (tablets portrait) -------- */
+@media (max-width: 992px) {
+  /* Header/Nav spacing */
+  header { padding: 0 0.75rem; }
+  nav {
+    height: auto;
+    min-height: 64px;
+    gap: 10px;
+  }
+  nav h1 a { font-size: clamp(1.6rem, 4.2vw, 2.1rem); }
+  nav ul { gap: 0.75rem; }
+  nav ul li a { padding: 0.35rem 0.85rem; font-weight: 600; }
+
+  /* Prevent header overlap with content */
+  .content-wrapper { margin: 90px auto 1.5rem; }
+
+  /* Hero section & big typing text */
+  .over { height: 480px; background-position: center; }
+  .typing {
+    font-size: clamp(28px, 5.5vw, 46px);
+    padding: 0 12px;
+    white-space: normal; /* allow wrapping on smaller screens */
+  }
+
+  /* TOC box fluid width & inner font balance */
+  .toc-cute {
+    padding: 22px 22px;
+  }
+  .toc-cute h2 { font-size: 24px; }
+  .toc-cute li { font-size: 18px; }
+
+  /* Section typography a bit smaller */
+  .section-h1 {
+    font-size: clamp(2rem, 4.5vw, 2.4rem);
+    padding-left: 0.8rem;
+  }
+  .section-p { font-size: 20px; }
+
+  /* Flip-card grid friendliness: let card fit container width */
+  .flip-card { width: 100%; max-width: 360px; margin: 0 auto; }
+}
+
+/* -------- ≤900px (already stacking aside via your rule) -------- */
+@media (max-width: 900px) {
+  /* Keep what you had and refine spacing a bit */
+  .content-wrapper { margin-top: 84px; gap: 1.25rem; }
+  .content-wrapper aside { margin-top: 1.25rem; }
+}
+
+/* -------- ≤768px (phones landscape / small tablets) -------- */
+@media (max-width: 768px) {
+  /* Header/Nav: bigger tap targets slightly */
+  nav ul li a { padding: 0.45rem 0.8rem; }
+
+  /* Hero a bit more compact */
+  .over { height: 56vh; }
+  .typing { font-size: clamp(24px, 6.8vw, 38px); line-height: 1.2; }
+
+  /* Content paddings */
+  section { padding: 0 10px; }
+  .section-p { font-size: 18px; }
+
+  /* Column box readability */
+  .column-content p:first-child { font-size: 24px; }
+  .column-box { padding: 1rem 1.1rem; }
+
+  /* TOC */
+  .toc-cute { padding: 18px; }
+  .toc-cute h2 { font-size: 22px; }
+  .toc-cute .num { width: 32px; height: 32px; line-height: 32px; font-size: 16px; }
+
+  /* Q&A buttons stack on narrow screens */
+  .answers { flex-direction: column; gap: 0.75rem; }
+  .btn-answer { flex: 0 1 auto; width: 100%; }
+
+  /* Footer vertical stack & spacing */
+  footer { align-items: center; }
+  .footer-contanier { flex-direction: column; gap: 8px; }
+  .footer-nav { flex-direction: column; }
+  .footer-nav ul { gap: 10px; justify-content: center; }
+  .footer-nav ul li + li::before { margin: 0 12px; }
+  #footer_p { text-align: center; }
+}
+
+/* -------- ≤576px (small phones) -------- */
+@media (max-width: 576px) {
+  header { padding: 0 0.6rem; }
+  nav h1 a { font-size: clamp(1.4rem, 6.2vw, 1.8rem); }
+  nav ul li a { padding: 0.4rem 0.7rem; font-size: 0.96rem; }
+
+  .over { height: 48vh; }
+  .typing { font-size: clamp(20px, 8.8vw, 32px); }
+
+  .section-h1 { font-size: clamp(1.6rem, 6.2vw, 2rem); border-left-width: 4px; }
+
+  /* Tighten margins on content boxes */
+  .content-wrapper { margin: 78px auto 1.2rem; padding: 0 0.6rem; }
+  .column-box { padding: 0.9rem 0.95rem; }
+  .column-content p:first-child { font-size: 22px; }
+
+  /* Make sure images never overflow */
+  img, .my-photo { max-width: 100%; width: 100%; height: auto; }
+
+  /* Flip-card narrower on tiny phones */
+  .flip-card { max-width: 320px; }
+
+  /* Footer text size */
+  .footer-nav ul li a, #footer_p { font-size: 0.95rem; }
+}
+
+/* -------- Touch devices: remove hover underline effect -------- */
+@media (hover: none) and (pointer: coarse) {
+  nav ul li a:hover { text-decoration: none; }
 }
